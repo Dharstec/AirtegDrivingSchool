@@ -1,0 +1,398 @@
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ Home Slider Section Start ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+<section class="relative w-full h-[500px] bg-cover bg-center flex items-center justify-start"
+    style="background-image: url('../../../../images/main-bg.jpg')">
+    <!-- Left Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+
+    <div class="container mx-auto !px-5">
+        <!-- Slider Content -->
+        <div class="relative z-10 text-white max-w-xl py-10">
+            <mat-card class="!bg-transparent !shadow-none !border-none">
+                <div class="relative ">
+                    <div class="overflow-hidden relative">
+                        <!-- Slides -->
+                        <div class="flex transition-transform duration-700 ease-in-out"
+                            [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+                            <div *ngFor="let slide of slides" class="flex-shrink-0 w-full space-y-4">
+                                <h2 class="text-4xl font-bold leading-tight">{{ slide.title }}</h2>
+                                <p class="text-lg leading-relaxed opacity-90">{{ slide.description }}</p>
+                                <button mat-raised-button color="accent"
+                                    class="bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300">
+                                    Contact Us
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Left Arrow -->
+                        <!-- <button  mat-icon-button (click)="prevSlide()" class="absolute top-1/2 -translate-y-1/2 left-0 text-white bg-black/30 hover:bg-black/60 rounded-full p-2">
+          <mat-icon>chevron_left</mat-icon>
+        </button> -->
+
+                        <!-- Right Arrow -->
+                        <!-- <button mat-icon-button (click)="nextSlide()" class="absolute top-1/2 -translate-y-1/2 right-0 text-white bg-black/30 hover:bg-black/60 rounded-full p-2">
+          <mat-icon>chevron_right</mat-icon>
+        </button> -->
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</section>
+
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ Home Slider Section End.  ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+
+
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ Why Choose Us? Start.  ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+<section class="py-8 sm:py-16 bg-gray-50 text-center">
+    <!-- Section Header -->
+    <div class="container mx-auto mb-12 sm:px-8">
+        <h2 class="text-2xl sm:text-2xl sm:text-4xl font-bold text-gray-800 mb-4">Why Choose Us?</h2>
+        <p class="text-base text-gray-600  mb-10">
+            Learn to drive with confidence from certified instructors dedicated to your safety and success. <br />
+            We provide personalized training programs designed for beginners and experienced drivers alike.
+        </p>
+
+
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+            <mat-card *ngFor="let item of features"
+                class="p-6 !rounded-2xl shadow-lg !hover:shadow-2xl transition-all duration-300 !bg-white !shadow-xl group transition-all duration-500 transform hover:-translate-y-2">
+                <div class="flex flex-col items-center space-y-4">
+                    <!-- <mat-icon class="text-[45px] text-gray-800 group-hover:text-red-500">{{ item.icon }}</mat-icon> -->
+                    <img [src]="item.img" alt="" class="w-24">
+                    <h3 class="text-xl font-semibold text-gray-800 group-hover:text-[#019dff]">
+                        {{ item.title }}
+                    </h3>
+                    <p class="text-gray-600 text-base text-center">
+                        {{ item.description }}
+                    </p>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</section>
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ Why Choose Us? End.    ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ  Choose the Right Course for You START ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+<section class="py-8 sm:py-16 bg-white text-center" id="courses">
+    <!-- Section Header -->
+    <div class="container mx-auto mb-12 sm:px-8">
+        <h2 class="text-2xl sm:text-4xl font-bold text-gray-800 mb-4">
+            Choose the Right Course for You
+        </h2>
+        <p class="text-base max-w-6xl mx-auto text-gray-600 leading-relaxed mb-10">
+            Whether you’re a beginner stepping behind the wheel for the first time
+            or looking to refresh your driving confidence, we have the perfect course for you.
+            Our expert instructors ensure you learn safely and efficiently.
+            Flexible schedules and personalized lessons make your journey stress-free.
+            Choose the plan that fits your goals and start driving with confidence today.
+        </p>
+
+
+        <!-- Courses Row -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <mat-card *ngFor="let course of courses"
+                class="p-8 rounded-2xl !shadow-xl hover:shadow-xl transition-all duration-300 text-left !bg-white">
+                <div class="w-full bg-gray-200 mb-5">
+                    <img [src]="course.img" alt="" class="max-w-[60%] mx-auto">
+                </div>
+                <h3 class="text-2xl font-semibold text-gray-700 mb-3">{{ course.title }}</h3>
+                <p class="text-gray-600 mb-5">{{ course.description }}</p>
+
+                <!-- Course Features -->
+                <ul class="space-y-3">
+                    <li *ngFor="let feature of course.features" class="flex items-start space-x-2">
+                        <mat-icon class="!text-green-500">check_circle</mat-icon>
+                        <span>
+                            <strong>{{ feature.property }}:</strong>
+                            <span class="text-gray-700">{{ feature.value }}</span>
+                        </span>
+                    </li>
+                </ul>
+            </mat-card>
+        </div>
+    </div>
+</section>
+
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ  Choose the Right Course for You End.  ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+
+
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ   Meet Our Expert Coaches start  ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+<section class="py-8 sm:py-16 bg-gray-50 text-center" id="experts">
+    <!-- Header -->
+    <div class="container mx-auto mb-12 sm:px-8">
+        <h2 class="text-2xl sm:text-4xl font-bold text-gray-800 mb-4">
+            Meet Our Expert Coaches
+        </h2>
+        <p class="text-base text-gray-600 leading-relaxed mb-5 max-w-4xl mx-auto">
+            Our certified instructors combine years of hands-on driving experience
+            with proven teaching methods to help you learn faster and safer.
+            They are passionate about making every learner a confident and responsible driver.
+        </p>
+
+
+        <!-- Coaches Row -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 px-6">
+            <div *ngFor="let coach of coaches" class="relative group">
+                <div class="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img [src]="coach.image" [alt]="coach.name"
+                        class="w-full h-[450px] object-cover transform group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <!-- <div class="mt-4">
+        <h3 class="text-2xl font-semibold text-gray-800">{{ coach.name }}</h3>
+        <p class="text-gray-600">{{ coach.role }}</p>
+      </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ   Meet Our Expert Coaches end.   ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+
+
+
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ   Customer feedback start  ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+<section class="py-8 sm:py-16 bg-white text-center" id="testimonial">
+    <!-- Header -->
+    <div class="container mx-auto mb-12 sm:px-8">
+        <h2 class="text-2xl sm:text-4xl font-bold text-gray-800 mb-4">
+            Customer feedback
+        </h2>
+        <p class="text-base text-gray-600 leading-relaxed mb-10 max-w-4xl mx-auto">
+            Our learners’ success stories inspire us every day.
+            From confident first drives to smooth highway journeys,
+            we’re proud to be part of every milestone our students achieve.
+        </p>
+
+
+        <!-- Coaches Row -->
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-10 px-6">
+            <div class="elfsight-app-0f724304-7f43-40d6-a9b3-5ba55e4808c7" data-elfsight-app-lazy></div>
+        </div>
+    </div>
+</section>
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ   Customer feedback end.   ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+
+
+
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ  About Us Start  ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+<section class="py-8 sm:py-16 bg-gray-50 text-gray-800" id="about-us">
+    <!-- Title + Description -->
+    <div class="text-center max-w-3xl mx-auto mb-12 px-4">
+        <h2 class="text-2xl sm:text-4xl font-bold mb-4">About Us</h2>
+        <p class="text-base leading-relaxed">
+            Our driving school is dedicated to providing safe, reliable, and expert driver
+            training for learners of all ages. We combine modern teaching techniques with
+            real-world experience to help you become a confident and responsible driver.
+            With certified instructors and personalized attention, your journey behind the
+            wheel begins with trust and confidence.
+        </p>
+    </div>
+
+    <!-- Image + Content Row -->
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6">
+        <div>
+            <img [src]="aboutus" alt="About Driving School" class="w-full h-96 object-cover rounded-2xl shadow-lg" />
+        </div>
+
+        <div>
+            <p class="text-base leading-relaxed text-gray-600">
+                Established with a passion for road safety and driver education,
+                our driving school has been empowering learners to achieve their
+                driving goals for over a decade. Our mission is to create skilled
+                drivers who prioritize safety and responsibility on the road.
+                We offer a range of courses tailored to meet the needs of beginners,
+                experienced drivers, and those seeking advanced training.
+                Our state-of-the-art vehicles and comprehensive curriculum ensure
+                that every student receives the highest quality instruction.
+                Join us and take the first step towards becoming a confident driver today.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ  About Us End.   ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+
+
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ  Gallery Start.  ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+<section class="py-16 bg-white text-gray-800">
+    <div class="text-center max-w-3xl mx-auto mb-12 px-4">
+        <h2 class="text-4xl font-bold mb-4">Gallery</h2>
+        <p class="text-lg text-gray-600">
+            Explore moments from our driving sessions, student achievements, and training highlights.
+            Photos and videos that showcase our journey of safe and confident driving.
+        </p>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6">
+        <div *ngFor="let item of gallery; let i = index" class="relative group cursor-pointer" (click)="openPreview(i)">
+            <ng-container *ngIf="item.type === 'image'; else videoThumb">
+                <img [src]="item.src" alt="Gallery Image"
+                    class="w-full h-56 object-cover rounded-xl shadow-md group-hover:opacity-90 transition" />
+            </ng-container>
+
+            <ng-template #videoThumb>
+                <div class="relative">
+                    <video [src]="item.src" muted class="w-full h-56 object-cover rounded-xl shadow-md"></video>
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center rounded-xl">
+                        <span class="text-white text-xl font-semibold">▶</span>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+
+    <div *ngIf="isPreviewOpen" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+        <div class="relative max-w-4xl w-full mx-4">
+            <button (click)="closePreview()" class="absolute top-3 right-3 text-white text-3xl font-bold">
+                ✕
+            </button>
+
+            <!-- Image or Video Preview -->
+            <ng-container *ngIf="gallery[currentIndexs].type === 'image'; else videoPreview">
+                <img [src]="gallery[currentIndex].src" class="w-full max-h-[80vh] object-contain rounded-lg" />
+            </ng-container>
+
+            <ng-template #videoPreview>
+                <video [src]="gallery[currentIndexs].src" controls autoplay muted
+                    class="w-full max-h-[80vh] object-contain rounded-lg"></video>
+            </ng-template>
+
+            <!-- Navigation Buttons -->
+            <button (click)="prevItem()"
+                class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white text-3xl px-3 py-1 rounded-full">‹</button>
+            <button (click)="nextItem()"
+                class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white text-3xl px-3 py-1 rounded-full">›</button>
+        </div>
+    </div>
+</section>
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ  Gallery End. .  ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+
+
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ  Contact Us Start ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+<section class="py-16 bg-gray-50 text-gray-800" id="contact-us">
+    <div class="text-center max-w-3xl mx-auto mb-12 px-4">
+        <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
+        <p class="text-lg leading-relaxed text-gray-600">
+            We’re here to help you with any questions or assistance you may need.
+            Reach out to our friendly team or visit our location for personalized support.
+            Let’s get you started on your driving journey today.
+        </p>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 px-6">
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <p class="text-gray-700 font-bold text-xl mb-5">Airteg Driving School - Main Office</p>
+            <p class="text-gray-700 mb-2"><strong>Address:</strong> 45, Main Road, Anna Nagar, Chennai - 600102</p>
+            <p class="text-gray-700 mb-2"><strong>Phone:</strong> +91 98765 43210</p>
+            <p class="text-gray-700 mb-4"><strong>Email:</strong> info@airtegdrivingschool.com</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.927465186186!2d79.13377457466628!3d12.912331590890858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad4799be5e1e2d%3A0xf1234567890abcdef!2sDriving%20School!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <p class="text-gray-700 font-bold text-xl mb-5">Airteg Driving School</p>
+            <p class="text-gray-700 mb-2"><strong>Address:</strong> 45, Main Road, Anna Nagar, Chennai - 600102</p>
+            <p class="text-gray-700 mb-2"><strong>Phone:</strong> +91 98765 43210</p>
+            <p class="text-gray-700 mb-4"><strong>Email:</strong> info@airtegdrivingschool.com</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.927465186186!2d79.13377457466628!3d12.912331590890858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad4799be5e1e2d%3A0xf1234567890abcdef!2sDriving%20School!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ  Contact Us End.  ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+
+
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ  Start Your Journey With Us Start ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+<section class="py-16 bg-white dark:bg-gray-900">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <!-- Title -->
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800 dark:text-white">
+            Start Your Journey With Us
+        </h2>
+
+        <!-- Description -->
+        <p class="text-gray-600 dark:text-gray-300 mb-2">
+            We’re here to help you with all your driving school-related queries.
+        </p>
+        <p class="text-gray-600 dark:text-gray-300 mb-2">
+            Whether you need information about courses, schedules, or registration — we’re happy to assist.
+        </p>
+        <p class="text-gray-600 dark:text-gray-300 mb-8">
+            Fill out the form below and our team will get in touch with you shortly.
+        </p>
+
+        <!-- Form -->
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()"
+            class="bg-white border shadow-2xl border-gray-100 dark:bg-gray-800 rounded-2xl p-8 text-left">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Name -->
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Enter your name" formControlName="name" />
+                    <mat-error *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+                        Name is required
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Email -->
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Enter your email" formControlName="email" />
+                    <mat-error *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+                        Valid email is required
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Phone -->
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Phone</mat-label>
+                    <input matInput placeholder="Enter your phone number" formControlName="phone" />
+                </mat-form-field>
+
+                <!-- Subject -->
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Subject</mat-label>
+                    <input matInput placeholder="Enter subject" formControlName="subject" />
+                </mat-form-field>
+            </div>
+
+            <!-- Message -->
+            <mat-form-field appearance="outline" class="w-full mt-6">
+                <mat-label>Message</mat-label>
+                <textarea matInput rows="4" placeholder="Your message" formControlName="message"></textarea>
+            </mat-form-field>
+
+            <!-- Submit Button -->
+            <div class="text-center mt-8">
+                <button mat-raised-button type="submit" [disabled]="contactForm.invalid"
+                    class="px-8 py-2 !bg-green-800 !text-white !min-w-[250px] hover:!bg-green-600 transition-all duration-300 text-white font-semibold">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ  Start Your Journey With Us End.  ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+
+
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ  Disclaimer Start   ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->
+<section class="py-10 bg-gray-100 text-center text-gray-700">
+    <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+            DISCLAIMER
+        </h2>
+        <p class="leading-relaxed mb-2">
+            License assistance will be provided as per prevailing RTO regulations.
+        </p>
+        <p class="leading-relaxed mb-2">
+            Training car models are subject to availability.
+        </p>
+        <p class="leading-relaxed">
+            For detailed terms and conditions,
+            <a routerLink="/terms-and-condition" class="text-blue-600 hover:underline font-medium">click here.</a>
+        </p>
+    </div>
+</section>
+<!-- ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ  Disclaimer end.   ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ -->

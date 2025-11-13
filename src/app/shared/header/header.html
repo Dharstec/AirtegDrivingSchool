@@ -1,0 +1,41 @@
+<div class="w-full shadow-md bg-white fixed top-0 left-0 z-50" id="header">
+  <!-- Header -->
+  <header class="container mx-auto flex items-center justify-between !px-5 py-4 relative">
+    <!-- Logo -->
+    <a routerLink="/" class="flex items-center text-[#019dff] font-bold text-2xl">
+      <!-- <img src="https://pub-e63b17b4d990438a83af58c15949f8a2.r2.dev/type/circle.png" class="w-40 sm:w-48 md:w-56 lg:w-64 h-auto" alt="DrivingSchool Logo"> -->
+       <strong class="">Airteg</strong>&nbsp;Driving School
+    </a>
+
+    <!-- Hamburger Button -->
+    <button
+      class="inline-flex p-2 text-gray-700 rounded-lg lg:hidden hover:bg-gray-200 focus:outline-none"
+      (click)="mobileMenuOpen = !mobileMenuOpen">
+      <mat-icon>{{ mobileMenuOpen ? 'close' : 'menu' }}</mat-icon>
+    </button>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden lg:flex lg:items-center lg:space-x-6 navitems">
+      <a (click)="navigateToHome()">Home</a>
+      <a (click)="navigateToFragment('courses')" >Courses</a>
+      <a (click)="navigateToFragment('experts')" >Experts</a>
+      <a (click)="navigateToFragment('testimonial')" >Testimonials</a>
+      <a (click)="navigateToFragment('about-us')">About us</a>
+      <a (click)="navigateToFragment('contact-us')">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- Mobile Overlay Menu -->
+  <div
+    class="absolute top-full left-0 w-full bg-white text-gray-800 shadow-lg transition-all duration-300 ease-in-out lg:hidden"
+    [ngClass]="mobileMenuOpen ? 'block' : 'hidden'">
+    <nav class="flex flex-col p-4 space-y-3 text-base font-medium">
+      <a class="cursor-pointer" (click)="navigateToHome()">Home</a>
+      <a class="cursor-pointer" (click)="navigateToFragment('courses')" >Courses</a>
+      <a class="cursor-pointer" (click)="navigateToFragment('experts')" >Experts</a>
+      <a class="cursor-pointer" (click)="navigateToFragment('testimonial')" >Testimonials</a>
+      <a class="cursor-pointer" (click)="navigateToFragment('about-us')">About us</a>
+      <a class="cursor-pointer" (click)="navigateToFragment('contact-us')">Contact Us</a>
+    </nav>
+  </div>
+</div>
